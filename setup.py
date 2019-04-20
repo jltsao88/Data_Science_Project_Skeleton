@@ -20,16 +20,21 @@ setup(
         'Programming Language :: Python :: 3',
     ],
     # Substitute <github_account> with the name of your GitHub account
-    url='https://github.com/jltsao88/titanic_datascience',
+    url='https://github.com/jltsao88/Data_Science_Project_Skeleton',
     author='Justin Tsao',  # Substitute your name
     author_email='jltsao88@gmail.com',  # Substitute your email
     license='MIT',
     packages=['titanic'],
     install_requires=[
+            'click>=7.0',
             'pypandoc>=1.4',
             'pytest>=4.3.1',
             'pytest-runner>=4.4',
     ],
     setup_requires=['pytest-runner'],
-    tests_require=['pytest']
+    tests_require=['pytest'],
+    entry_points='''
+        [console_scripts]
+        titanic_analysis=titanic.command_line:titanic_analysis
+        '''
 )
